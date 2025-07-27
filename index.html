@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="crud.webp" type="image/x-icon">
+    <title>CRUD Website</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+    <section id="crud-app" class="container">
+        <div id="head" class="header">
+            <h1>CRUDS Application</h1>
+            <p>Welcome to the CRUDS application. You can Create, Read, Update, Delete, and Search items.</p>
+        </div>
+        <table>
+            <!--input section-->
+            <div id="input" class="input">
+                <tr>
+                    <td>
+                        <input type="text" id="title" placeholder="Enter title">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input onkeyup='getTotal()' type="number" id="price" placeholder="price">
+                    </td>
+                    <td>
+                        <input onkeyup='getTotal()' type="number" id="taxes" placeholder="Taxes">
+                    </td>
+                    <td>
+                        <input onkeyup='getTotal()' type="number" id="ads" placeholder="Ads">
+                    </td>
+                    <td>
+                        <input onkeyup='getTotal()' type="number" id="discount" placeholder="Discount">
+                    </td>
+                    <td>
+                        <p id="total" class="Total">12 </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="number" id="count" placeholder="Count">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="category" placeholder="Category">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="create" class="Create">Create</button>
+                    </td>
+                </tr>
+            </div>
+            <!--output section-->
+            <div id="output" class="output">
+                <tr>
+                    <td>
+                        <input onkeyup="searchData(this.value)"   type="text" class="search" id="search-txt" placeholder="Search by title">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="getSearchMood(this.id)" id="search-title" class="searchtitle">Search by title</button>
+                    </td>
+                    <td>
+                        <button onclick="getSearchMood(this.id)" id="search-category" class="searchcategory">Search by category</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                <div id="delete-all"></div>
+                    </td>
+                <tr style="font-variant: small-caps; font-weight: bold; font-size: 1.5em;">
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>count</th>
+                    <th>category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="tbody" >
+                    <!-- Data will be inserted here dynamically -->
+                </tbody>
+            </div>
+        </table>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
